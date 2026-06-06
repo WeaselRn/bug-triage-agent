@@ -119,6 +119,6 @@ When asked to comment on issues:
 
 When asked to triage issues, automatically add a triage comment to each issue after analysis.
 Always explain your reasoning.
-"""
+""",
     tools=[gitlab_tools],
 )
