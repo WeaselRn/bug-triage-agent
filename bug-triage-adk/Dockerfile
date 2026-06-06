@@ -19,6 +19,6 @@ RUN npm install -g @zereight/mcp-gitlab
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8000
 
 CMD ["adk", "web", "--host", "0.0.0.0", "--port", "8000"]
