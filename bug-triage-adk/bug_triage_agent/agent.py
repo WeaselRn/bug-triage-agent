@@ -123,7 +123,7 @@ root_agent = Agent(
 
         When creating GitLab comments use exactly this structure:
 
-        ## 🤖 AI Triage Assessment
+        ## AI Triage Assessment
 
         Severity: <severity>
 
@@ -150,6 +150,37 @@ root_agent = Agent(
         5. Highlight the top 3 most urgent issues.
 
         Never modify GitLab unless the user explicitly asks to update issues or run automatic triage.
+
+        AUTO TRIAGE MODE
+
+        When the user asks to triage an issue:
+
+        1. Retrieve the issue.
+        2. Determine severity.
+        3. Determine category.
+        4. Generate labels.
+        5. Generate a triage comment.
+
+        Suggested labels must include:
+
+        * one severity label
+        * one type label
+        * one area label
+
+        Examples:
+
+        severity::high
+        type::performance
+        area::backend
+
+        If the user explicitly asks to apply triage:
+
+        1. Update the issue labels.
+        2. Create a GitLab issue note with the triage assessment.
+        3. Confirm completion.
+
+        Use GitLab MCP tools for all updates.
+
 
         """,
     tools=[gitlab_tools],
